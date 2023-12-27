@@ -2,16 +2,17 @@
 <template>
   <div id="app">
     <h1>{{ message }}</h1>
-    <progress-bar-button></progress-bar-button>
+    <!-- <progress-bar-button></progress-bar-button> -->
+
   </div>
 </template>
 
 <script>
-import ProgressBarButton from '@/components/ProgressBarButton.vue';
+// import ProgressBarButton from '@/components/ProgressBarButton.vue';
 
 export default {
   components: {
-    ProgressBarButton
+    // ProgressBarButton
   },
   data() {
     return {
