@@ -1,4 +1,3 @@
-import json
 from flask import Flask
 from flask_graphql import GraphQLView
 from graphene import Schema, ObjectType, String, Field, Int, List
