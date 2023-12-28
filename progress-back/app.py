@@ -8,11 +8,12 @@ import config.database as database_conf
 app = Flask(__name__)
 
 # Chargement initial des données depuis le fichier JSON
-if is_correct_database(database_conf.PATH):
-    data = read("database.json", database_conf.STRUCTURE)
+if is_correct_database(database_conf.PATH, database_conf.STRUCTURE):
+    data = read("database.json")
 else:
+    print('else')
     data = {'task_lists':''}
-    write(database_conf.PATH, data)
+    write(database_conf.PATH, data, force=True)
 
 
 class Task(ObjectType):

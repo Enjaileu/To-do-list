@@ -2,6 +2,7 @@
 <template>
   <div id="app">
     <h1>{{ message }}</h1>
+    <add-list-btn></add-list-btn>
     <!-- <progress-bar-button></progress-bar-button> -->
 
   </div>
@@ -9,10 +10,12 @@
 
 <script>
 // import ProgressBarButton from '@/components/ProgressBarButton.vue';
+import AddListBtn from '@/components/AddListBtn.vue';
 
 export default {
   components: {
     // ProgressBarButton
+    AddListBtn
   },
   data() {
     return {
@@ -25,8 +28,11 @@ export default {
 
 <!-- style css -->
 <style>
+  @import "@/components/style/variables.css";
+
+
   body {
-    background-color: #092635;
+    background-color: var(--bg-color);
     margin: 0; /* Supprime la marge par défaut du corps */
     font-family: 'Rubik', sans-serif;
     color: white;

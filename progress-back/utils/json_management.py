@@ -25,7 +25,7 @@ def read(path:str):
     except json.JSONDecodeError as e:
         raise json.JSONDecodeError(f"Error decoding JSON in file '{path}'.") from e
 
-def write(path:str, data:dict) -> None:
+def write(path:str, data:dict, force:bool = False) -> None:
     """
     Write JSON data to a file.
 
@@ -44,7 +44,13 @@ def write(path:str, data:dict) -> None:
     """
 
     try:
+        if force == True:
+            dir = os.path.dirname(path)
+            if not os.path.exists(dir):
+                os.makedirs(dir)
+
         with open(path, 'w') as file:
+            print('file open')
             json.dump(data, file, indent=2)
     except FileNotFoundError as e:
         raise FileNotFoundError(f"The file path '{path}' was not found.") from e
